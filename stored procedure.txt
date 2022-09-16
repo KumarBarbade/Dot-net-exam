@@ -1,0 +1,18 @@
+CREATE PROCEDURE [dbo].[updateproduct]
+	@BookId int ,
+	@BookName varchar(50),
+	@BookRate decimal(18,2),
+	@Description varchar(200),
+	@CategoryName varchar(50)
+
+AS
+	update Products set BookName = @BookName , BookRate = @BookRate , Description = @Description , CategoryName = @CategoryName where BookId = @BookId
+RETURN 0
+
+
+CREATE PROCEDURE [dbo].[ShowAllProducts]
+
+	AS
+	SELECT * from Products
+RETURN 0
+
